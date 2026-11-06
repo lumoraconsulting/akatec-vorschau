@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Preisrechner | Akatec Umwelttechnik</title>
+	<link rel="icon" href="https://akatec-umwelttechnik.de/wp-content/uploads/2025/04/Akatec-favicon-300x300.png">
+	<style>
+		/* Seitenhintergrund und Grundschrift wie auf akatec-umwelttechnik.de */
+		body {
+			margin: 0;
+			background: #fff;
+			color: #333;
+			font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+		}
+
+		main {
+			max-width: 640px;
+			margin: 48px auto;
+			padding: 0 15px;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<div class="akatec-preisrechner" data-css="akatec-preisrechner/assets/preisrechner.css" data-endpoint="/vorschau-anfrage"></div>
+	</main>
+
+	<script>
+		// Nur Vorschau: Ohne WordPress gibt es keinen Mailversand. Das Absenden wird
+		// hier bestätigt, die Daten stehen in der Browser-Konsole.
+		const echtesFetch = window.fetch;
+		window.fetch = (adresse, optionen) => {
+			if (String(adresse).endsWith('/vorschau-anfrage')) {
+				console.info('Vorschau: Diese Anfrage ginge in WordPress an info@akatec-umwelttechnik.de', JSON.parse(optionen.body));
+				const antwort = new Response(JSON.stringify({ ok: true }), { headers: { 'Content-Type': 'application/json' } });
+				return new Promise((fertig) => setTimeout(() => fertig(antwort), 600));
+			}
+			return echtesFetch(adresse, optionen);
+		};
+	</script>
+	<script src="akatec-preisrechner/assets/preisrechner-daten.js"></script>
+	<script src="akatec-preisrechner/assets/preisrechner.js"></script>
+</body>
+</html>
