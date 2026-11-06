@@ -729,6 +729,44 @@ a:focus-visible {
 	color: var(--gruen);
 }
 
+/* Festpreis-Hinweis: kleine hellgraue Box unter dem Gesamtpreis. Die kurzen
+   Hinweise zu Ab- und Stundenpreisen stehen davor, weil sie den Betrag erklären. */
+
+.festpreis-hinweis {
+	display: flex;
+	gap: 10px;
+	margin-top: 16px;
+	padding: 14px 16px;
+	background: #f5f5f5;
+	border-radius: 12px;
+	font-size: 13px;
+	line-height: 1.55;
+	color: var(--grau);
+}
+
+.festpreis-hinweis > .icon {
+	width: 18px;
+	height: 18px;
+	margin-top: 1px;
+}
+
+.festpreis-hinweis strong {
+	display: block;
+	margin-bottom: 4px;
+	font-size: 14px;
+	line-height: 1.4;
+	font-weight: 800;
+	color: var(--text);
+}
+
+.festpreis-hinweis p {
+	margin: 0;
+}
+
+.festpreis-hinweis p + p {
+	margin-top: 6px;
+}
+
 .kontakt {
 	margin-top: 32px;
 }

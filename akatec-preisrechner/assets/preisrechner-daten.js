@@ -1,5 +1,5 @@
 /*
- * Akatec Preisrechner: Preise, Entfernungen und Kontaktwege.
+ * Akatec Preisrechner: Preise, Entfernungen, Kontaktwege und der Hinweis zu den Festpreisen.
  *
  * Alle Preise in Euro inkl. MwSt. (Stand 05.11.2026, Preisliste von Shaher).
  * Nach einer Änderung lädt WordPress die Datei automatisch neu, die
@@ -40,4 +40,14 @@ window.AkatecPreisrechnerDaten = {
 		{ id: 'tv-kontrolle', gruppe: 'kamera', icon: 'auge', titel: 'TV-Kontrolle', untertitel: 'Kamerakontrolle', preis: 115, proStunde: true },
 		{ id: 'anderes', gruppe: 'kamera', icon: 'frage', titel: 'Anderes', untertitel: 'Etwas, das nicht in der Liste steht', aufAnfrage: true },
 	],
+
+	// Steht in Schritt 4 unter dem Gesamtpreis. Text von Shaher (06.11.2026), wörtlich übernommen.
+	festpreisHinweis: {
+		titel: 'Hinweis zu unseren Festpreisen',
+		absaetze: [
+			'Unsere Pauschalen gelten ausschließlich für die akute Verstopfungsbeseitigung. Die Reinigung erfolgt im Rahmen der technischen Möglichkeiten.',
+			'Bei außergewöhnlichen Verschmutzungen, Rohrschäden, fehlerhaften Leitungsanschlüssen oder sonstigen unvorhersehbaren Erschwernissen können zusätzliche Arbeiten erforderlich werden.',
+			'Sollten weiterführende Maßnahmen notwendig oder empfehlenswert sein, informiert Sie unser Monteur vorab über den zusätzlichen Aufwand und mögliche Kosten. Zusatzleistungen erfolgen ausschließlich nach Ihrer Zustimmung.',
+		],
+	},
 };
